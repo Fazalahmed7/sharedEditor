@@ -9,12 +9,19 @@ import {environment} from '../environments/environment';
 })
 export class AppComponent implements OnInit{
 	entityURL = environment.URL+"/api/create"
-	text:string;
+	url: string;
 	constructor(private http : HttpClient,private appService:AppService ){
 		
 	}
 	ngOnInit() {
-		this.appService.callService(this.entityURL+"/123");
+		let urlDetails = window.location.href
+		let arr = urlDetails.split("/");
+		let name = arr[arr.length-1];
+		this.appService.callService(this.entityURL+"/"+name).subscribe(it=>{
+			console.log(it)
+			this.url = this.entityURL+"/"+JSON.stringify(it);
+			console.log(this.url)
+		});
 	}
   mouseEnter(){
 	 

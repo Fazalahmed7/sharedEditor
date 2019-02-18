@@ -19,7 +19,6 @@ import com.aryak.sharedEditor.service.SharedEditorService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("http://localhost:4200/")
 public class EditorAction {
  
     public static final Logger logger = LoggerFactory.getLogger(EditorAction.class);

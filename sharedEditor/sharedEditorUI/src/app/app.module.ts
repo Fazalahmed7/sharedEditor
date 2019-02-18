@@ -5,13 +5,12 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {AppService} from './app.service';
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
